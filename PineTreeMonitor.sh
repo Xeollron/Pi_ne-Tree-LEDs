@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #Dev Version:1.2
 # Define bash Colours for better debug output
 Black='\e[0;30m'        # Black
