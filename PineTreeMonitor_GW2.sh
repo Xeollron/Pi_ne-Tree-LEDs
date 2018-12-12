@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #Dev Version:1.4
 
 # Define bash Colours for better debug output
