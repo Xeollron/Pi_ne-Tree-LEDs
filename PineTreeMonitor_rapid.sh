@@ -66,7 +66,7 @@ tcpdump -nnvvvi $FACE not port 22 and not port $PORT | while read b; do #Main lo
             echo "render;" 1>&3
             c="1"
           ;;
-          2) #for over 1000 bites render white LED
+          2|3) #for over 1000 bites render white LED
             if [[ "$c" == "2" ]]; then #Checks for 2 Same Colour in a row
               echo "rotate $CHANNEL,1,1,000000;" 1>&3 #adds off LED to buffer to split up same colour to help show LEDs "rolling" along the string
               echo " " #prints empty line to console
