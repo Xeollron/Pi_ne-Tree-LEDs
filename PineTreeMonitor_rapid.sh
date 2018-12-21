@@ -14,16 +14,16 @@ NC='\033[0m'            # No Color
 
 #Deine server properties for rpi-ws2812-server instance
 IP=10.10.10.42 #IPv4 Address of server (hostname may work?)
-PORT=6968      #Server port used when starting server (flag: -tcp $PORT)
+PORT=6969      #Server port used when starting server (flag: -tcp $PORT)
 
 #Should call script on pi over ssh to start the server on defined port, could be a single line but should be a script to verify not already running (wrap in tmux)
 
 #Define the LED strip configuration
-CHANNEL=2     #maximum channels looks to be 2? must be seperate channel from other server instance, PWM1 cannot be on channel 1
+CHANNEL=1     #maximum channels looks to be 2? must be seperate channel from other server instance, PWM1 cannot be on channel 1
 LEDNUM=144    #define number of LEDs being controlled by this server instance
 DIRECT=0      #define direction of LED string, some testing showed anything but 0 causes crash or failure in init, further testing required
 BRIGHT=64     #define brightness rnage 1-255, 32 or 64 seems to be good above 64 LEDs start getting hot. 255/undefined, LEDs, wiring, barrel plug get HOT! (55W per string, 11amp)
-PIN=13        #define GPIO pin in use for LED data. PWM0 on Pi3B(+) either GPIO12(physical pin 32) or GPIO18(physical pin 12 ugh). PWM1 on Pi3B(+) GPIO13(physical pin 33)
+PIN=12        #define GPIO pin in use for LED data. PWM0 on Pi3B(+) either GPIO12(physical pin 32) or GPIO18(physical pin 12 ugh). PWM1 on Pi3B(+) GPIO13(physical pin 33)
 
 SERV="$IP""/""$PORT"
 FACE=$(ip route get 8.8.8.8 | head -n1 | awk '{print $5}') #define the interface to run tcpdump on, defaults to finding "default route"/external interface
